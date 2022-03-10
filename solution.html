@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+
+    const root = document.getElementById("root");
+
+    window.addEventListener("DOMContentLoaded", (event) => {
+
+      const ul = document.createElement("ul");
+      const button = document.createElement("button");
+      button.textContent = "click!";
+      button.style.width = 20 + "vw";
+      button.style.height = 20 + "vw";
+
+      root.appendChild(button);
+      root.appendChild(ul);
+
+      button.addEventListener("click", (event) => {
+        for(let i = 0; i < 12; i++) {
+          const li = document.createElement("li");
+          li.textContent = `item-${i}`;
+          ul.appendChild(li);
+        };
+      });
+    });
+  </script>
+</body>
+</html>
