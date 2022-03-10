@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//color
+$color-1 : #fff;
+$color-2 : #eee;
+$color-3 : #ccc;
+$color-4 : #767676;
+$color-5 : #484848;
+$color-6 : #333;
+$color-7 : #222;
+// width variable 
+$mobile-min-width : 320px;
+$tablet-min-width : 768px;
+$desktop-min-width : 1024px;
+$fullhd-min-width : 1920px;
+//헤더높이
+$height-1 : 7vh;
+//네비높이
+$height-2 :7vh;
+
+//mixin-----------------
+@mixin responsive-media-query ($min-width, $max-width) {
+  @media (min-width:$min-width) and (max-width:$max-width) {
+    @content;
+  }
+}
+@mixin size($width, $height, $background) { //size set
+  width: $width;
+  height: $height;
+  background-color: $background;
+}
+@mixin flex($justify, $align, $flex) { //flex set
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $flex;
+}
+//네비 이미지 세팅
+@mixin navimg($url) {
+  background-image: $url;
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+//이미지 세팅
+@mixin img($url) {
+  background-image: $url;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+//extand
+%font-weight {
+  font-weight: 100;
+}
+body {
+  background-color: $color-2;
+  @include flex(center, center, column);
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+li {
+  list-style: none;
+}
+
+
+// artist 페이지 pc, 태블릿, 모바일 별 사이즈
+@include responsive-media-query($desktop-min-width, $fullhd-min-width) {  //pc에서 보이는 사이즈셋팅
+  body {
+    font-size: 16px;
+  }
+  #container { 
+    @include size(40vw, 100vh, $color-2);
+    & main {
+      @include size(inherit, min-content, #fcf);
+      & > section { //작품갤러리
+        & > .artwork-page { //작품사이즈
+          @include size(inherit, 93.3333vw, transparent);
+        }
+      }
+    }
+  }
+}
+@include responsive-media-query($tablet-min-width, $desktop-min-width) {  //태블릿에서 보이는 사이즈 셋팅
+  body {
+    font-size: 14px;
+  }
+  #container { 
+    @include size(60vw, 100vh, $color-2);
+    & main {
+      @include size(inherit, min-content, #fcf);
+      & > section { //작품갤러리
+        & > .artwork-page {  //작품사이즈
+          @include size(inherit, 140vw, transparent);
+        }
+      }
+    }
+  }
+}
+@include responsive-media-query($mobile-min-width, $tablet-min-width) { //모바일에서 보이는 사이즈 셋팅
+  body {
+    font-size: 12px;
+  }
+  #container {
+    @include size(100vw, 100vh, $color-2);
+    & main {
+      @include size(inherit, min-content, #fcf);
+      & > section { //작품갤러리
+        & > .artwork-page {  //작품사이즈
+          @include size(100vw, 233.3333vw, transparent);
+        }
+      }
+    }
+  }
+}
+
+#container {
+  & header {
+    @include size(inherit, $height-1, $color-1);
+    @include flex(center, center, row);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    border-bottom: 1px solid $color-2;
+    & > div {
+      @include size(90%, min-content, transparent);
+      @include flex(space-between, center, row);
+      & > div:nth-child(1) {
+        @include flex(center, center, row); 
+        
+        & > a { // 이전버튼
+          @include size(4vh, 4vh, transparent);
+          @include img(url(../images/btn-prev.png));
+          background-position: 0 50%;
+          background-size: auto 100%;
+        }
+        
+
+      }
+      & > div:nth-child(2) { //검색창
+        @include size(85%, 4vh, $color-2);
+        border-radius: 1vh;
+        @include flex(center, center, row);
+        position: relative;
+        input {
+          @include size(80%, 4vh, transparent);
+          border: none;
+          outline: none;
+        }
+        & > div {
+          @include size(3vh, 3vh, transparent);
+          position: absolute;
+          left: 2px;
+          @include img(url(../images/search.png));
+        }
+      }
+
+    }
+  }
+  & nav {
+    @include size(inherit, $height-2, $color-1);
+    @include flex(center, center, row);
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    border-top: 1px solid #eee;
+    & > div {
+      @include size(90%, inherit, transparent);
+      @include flex(space-between, center, row);
+      & > div {
+        @include size(5vh, 5vh, $color-1);
+        border-radius: 50%;
+        // border: 1px solid red;
+      }
+      & > div:nth-child(1) { //홈
+        background-color: $color-6;
+        @include navimg(url(../images/icon-home.png));
+      }
+      & > div:nth-child(2) { //팔로우
+        @include navimg(url(../images/icon-follow.png));
+      }
+      & > div:nth-child(3) { //트랜드
+        @include navimg(url(../images/icon-trand.png));
+      }
+      & > div:nth-child(4) { //마이갤러리
+        @include navimg(url(../images/icon-my-gallery.png));
+      }
+      & > div:nth-child(5) { //메세지
+        @include navimg(url(../images/icon-message.png));
+      }
+    }
+  }
+
+  & main {
+    padding-top: $height-1;
+    & section { //작품갤러리
+      @include size(inherit, min-content, $color-1);
+      & .artwork-page {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,1fr);
+        & li {   //작품
+          background-color: #cfc;
+          margin-right: .5vw;
+          margin-bottom: .5vw;
+        }
+        & li:nth-child(3n) { //오른쪽 여백없앨 3번째 작품들
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+}

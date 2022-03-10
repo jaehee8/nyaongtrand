@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  body {
+    font-size: 16px;
+  }
+
+  #container {
+    width: 40vw;
+    height: 100vh;
+    background-color: #eee;
+  }
+  #container main {
+    width: inherit;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    background-color: #fcf;
+  }
+  #container main > section > .artwork-page {
+    width: inherit;
+    height: 93.3333vw;
+    background-color: transparent;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+
+  #container {
+    width: 60vw;
+    height: 100vh;
+    background-color: #eee;
+  }
+  #container main {
+    width: inherit;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    background-color: #fcf;
+  }
+  #container main > section > .artwork-page {
+    width: inherit;
+    height: 140vw;
+    background-color: transparent;
+  }
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  #container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #eee;
+  }
+  #container main {
+    width: inherit;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    background-color: #fcf;
+  }
+  #container main > section > .artwork-page {
+    width: 100vw;
+    height: 233.3333vw;
+    background-color: transparent;
+  }
+}
+#container header {
+  width: inherit;
+  height: 7vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid #eee;
+}
+#container header > div {
+  width: 90%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#container header > div > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#container header > div > div:nth-child(1) > a {
+  width: 4vh;
+  height: 4vh;
+  background-color: transparent;
+  background-image: url(../images/btn-prev.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: auto 100%;
+}
+#container header > div > div:nth-child(2) {
+  width: 85%;
+  height: 4vh;
+  background-color: #eee;
+  border-radius: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+#container header > div > div:nth-child(2) input {
+  width: 80%;
+  height: 4vh;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#container header > div > div:nth-child(2) > div {
+  width: 3vh;
+  height: 3vh;
+  background-color: transparent;
+  position: absolute;
+  left: 2px;
+  background-image: url(../images/search.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container nav {
+  width: inherit;
+  height: 7vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  border-top: 1px solid #eee;
+}
+#container nav > div {
+  width: 90%;
+  height: inherit;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#container nav > div > div {
+  width: 5vh;
+  height: 5vh;
+  background-color: #fff;
+  border-radius: 50%;
+}
+#container nav > div > div:nth-child(1) {
+  background-color: #333;
+  background-image: url(../images/icon-home.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container nav > div > div:nth-child(2) {
+  background-image: url(../images/icon-follow.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container nav > div > div:nth-child(3) {
+  background-image: url(../images/icon-trand.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container nav > div > div:nth-child(4) {
+  background-image: url(../images/icon-my-gallery.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container nav > div > div:nth-child(5) {
+  background-image: url(../images/icon-message.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container main {
+  padding-top: 7vh;
+}
+#container main section {
+  width: inherit;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #fff;
+}
+#container main section .artwork-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+#container main section .artwork-page li {
+  background-color: #cfc;
+  margin-right: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+#container main section .artwork-page li:nth-child(3n) {
+  margin-right: 0;
+}/*# sourceMappingURL=trandstyle.css.map */

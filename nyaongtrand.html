@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nyaong-artist</title>
+  <link rel="stylesheet" href="./css/trandstyle.css">
+  <link rel="shortcut icon" href="./nyong-favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div id="loading">
+    <div></div>
+  </div>
+  <div id="container">
+    <header>
+      <div>
+        <div>
+          <!-- 이전버튼 -->
+          <a href="https://jaehee8.github.io/nyaongmain/"></a>
+        </div>
+        <!-- 검색 -->
+        <div>
+          <input type="text" placeholder="검색">
+          <!-- 서치아이콘div -->
+          <div></div>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <!--icon btn -->
+      <div>
+        <!--홈-->
+        <div></div>
+        <!-- 팔로우 -->
+        <div></div>
+        <!-- 트렌드및 검색 -->
+        <div></div>
+        <!-- 마이갤러리 -->
+        <div></div>
+        <!-- 메세지 -->
+        <div></div>
+      </div>
+    </nav>
+    <main>
+      <!-- 작품갤러리 -->
+      <section id="artwork-wrap">
+        <ul class="artwork-page">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+          <li>13</li>
+          <li>14</li>
+          <li>15</li>
+          <li>16</li>
+          <li>17</li>
+          <li>18</li>
+          <li>19</li>
+          <li>20</li>
+          <li>21</li>
+        </ul>
+      </section>
+    </main>
+
+  </div>
+</body>
+
+<script>
+  const loader = document.querySelector('#loading');
+  const html = document.querySelector('html');
+
+  html.style.overflow = 'hidden'; //로딩 중 스크롤 방지
+
+  window.addEventListener('load', () => {
+
+    setTimeout(() => { // 로딩속도 구현
+
+      loader.style.opacity = '0';
+      html.style.overflow = 'auto'; //스크롤 방지 해제
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 400);
+
+    }, 2000); //  로딩속도 구현
+
+  })
+
+  //size set
+  function sizeSet(element, width, height, widthUnit, heightUnit) {
+    element.style.width = width + widthUnit;
+    element.style.height = height + heightUnit;
+  }
+  /*
+  이벤튼 한번 발생할때 세번쨰section #artwork-wrap 안에 만들어지는  ul과 li
+  */
+  const content = document.querySelector('#container');
+  const artworkWrap = document.querySelector('#artwork-wrap');
+  const artworkPage = document.querySelector('.artwork-page');
+  
+  console.log(artworkPage.children.length);
+  // console.log(artworkWrap);
+  //더해줄 컨텐츠
+  const more = () => {
+    const ul = document.createElement('ul');
+    ul.classList.add('artwork-page');
+    for (let i = 0; i < artworkPage.children.length; i++) {
+      const li = document.createElement('li');
+
+      ul.appendChild(li);
+    }
+    artworkWrap.appendChild(ul);
+  }
+
+
+
+  let startValue = 0;
+  let endValue = 0;
+  window.addEventListener("load", function() {
+    this.addEventListener("touchstart", function(event) {
+      // console.log(event.changedTouches[0].pageY);
+      startValue = event.changedTouches[0].pageY;
+      console.log('터치시작'+ startValue);
+
+      // console.log(this);
+      this.addEventListener("touchend", function(event) {
+        // console.log(event.changedTouches[0].pageY);
+        endValue = event.changedTouches[0].pageY;
+        console.log('터치끝'+ endValue);
+      });
+      if(startValue !==0 && endValue !==0) {
+        console.log('ready');
+        if(startValue > endValue) {
+          console.log('밑으로');
+          //이베트발생
+          more();
+          
+        }else {
+          console.log('위로');
+        }
+      }
+    });
+  });
+
+
+// ? window.scrollY의 값이 더이상 증가하지 않으면 = 맨 끝
+// ? 이벤트 이전과 이벤트 다음과의 비교에서 이벤트 다음이 항상 커지면 "아무일도 안일어남"
+// ? 이벤트 이전과 이벤트 다음이 변화가 없다면 이벤트 발생
+// window.addEventListener('load', () => {
+
+//   let touchstart = 0;
+//   window.addEventListener('touchstart', (event) => {
+//     touchstart = event.changedTouches[0].clientY;
+//     console.dir("눌렀을때 높이값" + event.changedTouches[0].clientY);
+    
+//     console.log('touchstart');
+//     if(touchstart < touchend) {
+//     console.log('당신은 터치를 내렸습니다.');
+//   } else {
+//     console.log('당신은 터치를 올렸습니다.');
+//   }
+//   });
+  
+//   let touchend = 0;
+//   window.addEventListener('touchend', (event) => {
+//     touchend = event.changedTouches[0].clientY;
+//     console.dir("똇을때 높이값" + event.changedTouches[0].clientY);
+//     console.log('touchend');
+//     if(touchstart < touchend) {
+//     console.log('당신은 터치를 내렸습니다.');
+//   } else {
+//     console.log('당신은 터치를 올렸습니다.');
+//   }
+//   });
+  
+//   if(touchstart < touchend) {
+//     console.log('당신은 터치를 내렸습니다.');
+//   } else {
+//     console.log('당신은 터치를 올렸습니다.');
+//   }
+
+
+// });
+
+
+
+</script>
+
+</html>
