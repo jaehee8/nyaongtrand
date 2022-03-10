@@ -179,14 +179,14 @@ li {
         // border: 1px solid red;
       }
       & > div:nth-child(1) { //홈
-        background-color: $color-6;
         @include navimg(url(../images/icon-home.png));
       }
       & > div:nth-child(2) { //팔로우
         @include navimg(url(../images/icon-follow.png));
       }
       & > div:nth-child(3) { //트랜드
-        @include navimg(url(../images/icon-trand.png));
+        background-color: $color-6;
+        @include navimg(url(../images/hover-icon-trand.png));
       }
       & > div:nth-child(4) { //마이갤러리
         @include navimg(url(../images/icon-my-gallery.png));

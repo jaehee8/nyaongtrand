@@ -190,7 +190,6 @@ li {
   border-radius: 50%;
 }
 #container nav > div > div:nth-child(1) {
-  background-color: #333;
   background-image: url(../images/icon-home.png);
   background-position: 50% 50%;
   background-size: 90% auto;
@@ -203,7 +202,8 @@ li {
   background-repeat: no-repeat;
 }
 #container nav > div > div:nth-child(3) {
-  background-image: url(../images/icon-trand.png);
+  background-color: #333;
+  background-image: url(../images/hover-icon-trand.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
