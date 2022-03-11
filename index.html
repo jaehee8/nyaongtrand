@@ -11,9 +11,6 @@
 </head>
 
 <body>
-  <div id="loading">
-    <div></div>
-  </div>
   <div id="container">
     <header>
       <div>
@@ -77,30 +74,7 @@
 </body>
 
 <script>
-  const loader = document.querySelector('#loading');
-  const html = document.querySelector('html');
 
-  html.style.overflow = 'hidden'; //로딩 중 스크롤 방지
-
-  window.addEventListener('load', () => {
-
-    setTimeout(() => { // 로딩속도 구현
-
-      loader.style.opacity = '0';
-      html.style.overflow = 'auto'; //스크롤 방지 해제
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 400);
-
-    }, 2000); //  로딩속도 구현
-
-  })
-
-  //size set
-  function sizeSet(element, width, height, widthUnit, heightUnit) {
-    element.style.width = width + widthUnit;
-    element.style.height = height + heightUnit;
-  }
   /*
   이벤튼 한번 발생할때 세번쨰section #artwork-wrap 안에 만들어지는  ul과 li
   */
