@@ -230,16 +230,149 @@ li {
   height: min-content;
   background-color: #fff;
 }
-#container main section .artwork-page {
+#container main section > ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(7, 1fr);
 }
-#container main section .artwork-page li {
+#container main section > ul > li {
   background-color: #cfc;
   margin-right: 0.5vw;
   margin-bottom: 0.5vw;
 }
-#container main section .artwork-page li:nth-child(3n) {
+#container main section > ul > li > a {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  cursor: pointer;
+}
+#container main section > ul > li:nth-child(3n) {
   margin-right: 0;
+}
+#container main section > ul:nth-child(1) > li:nth-child(1) {
+  background-image: url(../images/3.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(2) {
+  background-image: url(../images/s04_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(3) {
+  background-image: url(../images/s05_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(4) {
+  background-image: url(../images/s08_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(5) {
+  background-image: url(../images/7.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(6) {
+  background-image: url(../images/s11_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(7) {
+  background-image: url(../images/6.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 90%;
+}
+#container main section > ul:nth-child(1) > li:nth-child(8) > a {
+  background-image: url(../images/Pepe_shimada1.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(9) {
+  background-image: url(../images/Pepe_shimada4.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(10) {
+  background-image: url(../images/Pepe_shimada3.jpeg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(11) {
+  background-image: url(../images/Pepe_shimada2.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(12) {
+  background-image: url(../images/s12_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(13) {
+  background-image: url(../images/s10_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(14) {
+  background-image: url(../images/Pepe_shimada7.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(15) {
+  background-image: url(../images/s11_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(16) {
+  background-image: url(../images/Pepe_shimada6.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(17) {
+  background-image: url(../images/s13_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(18) {
+  background-image: url(../images/Pepe_shimada5.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(19) {
+  background-image: url(../images/Pepe_shimada14.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(20) {
+  background-image: url(../images/b16_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main section > ul:nth-child(1) > li:nth-child(21) {
+  background-image: url(../images/b06_no.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=trandstyle.css.map */

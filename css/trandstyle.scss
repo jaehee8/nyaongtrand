@@ -201,17 +201,91 @@ li {
     padding-top: $height-1;
     & section { //작품갤러리
       @include size(inherit, min-content, $color-1);
-      & .artwork-page {
+      & > ul {
         display: grid;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(7,1fr);
-        & li {   //작품
+        & > li {   //작품
           background-color: #cfc;
           margin-right: .5vw;
           margin-bottom: .5vw;
+          & > a {
+            @include size(100%, 100%, $color-2);
+            cursor: pointer;
+          }
         }
-        & li:nth-child(3n) { //오른쪽 여백없앨 3번째 작품들
+        & > li:nth-child(3n) { //오른쪽 여백없앨 3번째 작품들
           margin-right: 0;
+        }
+
+
+      }
+      & > ul:nth-child(1) {
+        & > li:nth-child(1){
+          @include img(url(../images/3.jpg));
+        }
+        & > li:nth-child(2){
+          @include img(url(../images/s04_no.jpg));
+        }
+        & > li:nth-child(3){
+          @include img(url(../images/s05_no.jpg));
+        }
+        & > li:nth-child(4){
+          @include img(url(../images/s08_no.jpg));
+        }
+        & > li:nth-child(5){
+          @include img(url(../images/7.jpg));
+        }
+        & > li:nth-child(6){
+          @include img(url(../images/s11_no.jpg));
+        }
+        & > li:nth-child(7){
+          @include img(url(../images/6.jpg));
+          background-position: 50% 90%;
+        }
+        & > li:nth-child(8){
+          & > a {
+            @include img(url(../images/Pepe_shimada1.jpg));
+          }
+        }
+        & > li:nth-child(9){
+          @include img(url(../images/Pepe_shimada4.jpg));
+        }
+        & > li:nth-child(10){
+          @include img(url(../images/Pepe_shimada3.jpeg));
+        }
+        & > li:nth-child(11){
+          @include img(url(../images/Pepe_shimada2.jpg));
+        }
+        & > li:nth-child(12){
+          @include img(url(../images/s12_no.jpg));
+        }
+        & > li:nth-child(13){
+          @include img(url(../images/s10_no.jpg));
+        }
+        & > li:nth-child(14){
+          @include img(url(../images/Pepe_shimada7.jpg));
+        }
+        & > li:nth-child(15){
+          @include img(url(../images/s11_no.jpg));
+        }
+        & > li:nth-child(16){
+          @include img(url(../images/Pepe_shimada6.jpg));
+        }
+        & > li:nth-child(17){
+          @include img(url(../images/s13_no.jpg));
+        }
+        & > li:nth-child(18){
+          @include img(url(../images/Pepe_shimada5.jpg));
+        }
+        & > li:nth-child(19){
+          @include img(url(../images/Pepe_shimada14.jpg));
+        }
+        & > li:nth-child(20){
+          @include img(url(../images/b16_no.jpg));
+        }
+        & > li:nth-child(21){
+          @include img(url(../images/b06_no.jpg));
         }
       }
     }
