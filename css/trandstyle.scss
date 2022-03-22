@@ -1,7 +1,26 @@
+// reset --
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  background-color: #484848;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+li {
+  list-style: none;
 }
 //color
 $color-1 : #fff;
@@ -55,18 +74,6 @@ $height-2 :7vh;
 //extand
 %font-weight {
   font-weight: 100;
-}
-body {
-  background-color: $color-2;
-  @include flex(center, center, column);
-}
-a {
-  display: block;
-  text-decoration: none;
-  color: #333;
-}
-li {
-  list-style: none;
 }
 
 
